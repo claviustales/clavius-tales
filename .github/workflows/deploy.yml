@@ -8,6 +8,7 @@ on:
 
 env:
   FLY_APP_NAME: clavius-tales
+  FLY_REMOTE_BUILDER_VM_SIZE: shared-cpu-1x
 
 jobs:
   deploy:
