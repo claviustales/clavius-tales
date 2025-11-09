@@ -1,3 +1,5 @@
+deploy
+
 # Clavius Tales – Rack starter
 
 Pequeno esqueleto em Ruby/Rack pronto para deploy no Fly.io com Puma.
