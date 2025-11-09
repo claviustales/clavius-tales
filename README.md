@@ -1,5 +1,3 @@
-deploy
-
 # Clavius Tales – Rack starter
 
 Pequeno esqueleto em Ruby/Rack pronto para deploy no Fly.io com Puma.
@@ -37,6 +35,4 @@ Há um workflow em `.github/workflows/deploy.yml` que dispara `fly deploy` em to
 1. Gere um token: `fly auth token`.
 2. No repositório GitHub, adicione `FLY_API_TOKEN` em **Settings → Secrets and variables → Actions → New repository secret**.
 3. Confirme se `fly.toml` usa o mesmo `app` que existe na sua conta.
-4. Ao fazer push na `main`, o GitHub Actions executará o deploy automaticamente. Também é possível iniciar manualmente via _workflow dispatch_.
-
-O arquivo `Procfile` e `fly.toml` já estão configurados para manter uma instância sempre ligada (`min_machines_running = 1`).
+4. O workflow usa `fly deploy --local-only`, construindo a imagem diretamente no runner do GitHub (sem builder remoto). Ao fazer push na `main`, o deploy acontece automaticamente; também é possível iniciar manualmente via _workflow dispatch_.
