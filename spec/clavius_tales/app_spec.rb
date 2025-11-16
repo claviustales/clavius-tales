@@ -20,7 +20,7 @@ RSpec.describe ClaviusTales::App do
     end
 
     it 'returns welcome message' do
-      expect(response_body['message']).to eq('Bem-vindo ao backend da Clavius Tales')
+      expect(response_body['message']).to eq('Welcome to the Clavius Tales backend')
     end
   end
 
@@ -58,7 +58,7 @@ RSpec.describe ClaviusTales::App do
     end
 
     it 'returns not found message' do
-      expect(response_body['error']).to eq('Rota não encontrada')
+      expect(response_body['error']).to eq('Route not found')
     end
   end
 end
