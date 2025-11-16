@@ -17,6 +17,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.7
+          bundler-cache: true
+
+      - name: Run specs
+        run: bundle exec rspec
+
       - name: Install Flyctl
         uses: superfly/flyctl-actions/setup-flyctl@v1.4
 
