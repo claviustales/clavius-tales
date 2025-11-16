@@ -36,7 +36,3 @@ Há um workflow em `.github/workflows/deploy.yml` que dispara `fly deploy` em to
 2. No repositório GitHub, adicione `FLY_API_TOKEN` em **Settings → Secrets and variables → Actions → New repository secret**.
 3. Confirme se `fly.toml` usa o mesmo `app` que existe na sua conta.
 4. O workflow usa `fly deploy --local-only`, construindo a imagem diretamente no runner do GitHub (sem builder remoto). Ao fazer push na `main`, o deploy acontece automaticamente; também é possível iniciar manualmente via _workflow dispatch_.
-
-## Notas diversas
-
-Esta seção existe apenas como alteração irrelevante para acompanhar o fluxo de deploy.
