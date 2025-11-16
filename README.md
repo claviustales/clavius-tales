@@ -21,6 +21,14 @@ Endpoints básicos:
 - `GET /` retorna mensagem de boas-vindas
 - `GET /health` retorna status para monitoramento
 
+## Como testar
+
+```bash
+bundle exec rspec
+```
+
+Se preferir via Rake: `bundle exec rake spec`. Os testes usam RSpec + Rack::Test (`spec/app_spec.rb`) e validam as respostas JSON dos endpoints.
+
 ## Deploy no Fly.io
 
 1. Faça login e crie o app: `fly auth login && fly launch --no-deploy` (use o nome/region desejados).
