@@ -11,7 +11,7 @@ env:
   FLY_REMOTE_BUILDER_VM_SIZE: shared-cpu-1x
 
 jobs:
-  deploy:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,6 +28,19 @@ jobs:
 
       - name: Run specs
         run: bundle exec rspec
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.7
+          bundler-cache: true
 
       - name: Install Flyctl
         uses: superfly/flyctl-actions/setup-flyctl@v1.4
