@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
-require "json"
-require "rack"
+require 'json'
+require 'rack'
 
 module ClaviusTales
+  # Rack application que responde aos endpoints públicos.
   class App
     def call(env)
       request = Rack::Request.new(env)
 
       case [request.request_method, request.path_info]
-      when ["GET", "/"]
-        ok(payload(message: "Bem-vindo ao backend da Clavius Tales"))
-      when ["GET", "/health"]
-        ok(payload(status: "ok", time: Time.now.utc))
+      when ['GET', '/']
+        ok(payload(message: 'Bem-vindo ao backend da Clavius Tales'))
+      when ['GET', '/health']
+        ok(payload(status: 'ok', time: Time.now.utc))
       else
         not_found
       end
@@ -29,11 +30,11 @@ module ClaviusTales
     end
 
     def not_found
-      response(404, payload(error: "Rota não encontrada"))
+      response(404, payload(error: 'Rota não encontrada'))
     end
 
     def response(status, body)
-      [status, { "Content-Type" => "application/json" }, [body]]
+      [status, { 'Content-Type' => 'application/json' }, [body]]
     end
   end
 end
