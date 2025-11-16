@@ -23,6 +23,9 @@ jobs:
           ruby-version: 3.4.7
           bundler-cache: true
 
+      - name: Run RuboCop
+        run: bundle exec rubocop
+
       - name: Run specs
         run: bundle exec rspec
 
