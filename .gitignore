@@ -1,7 +1,12 @@
-/.bundle/
-/vendor/bundle/
-/vendor/gems/
-/log/
-/tmp/
+# Coverage artifacts
+coverage/
+
+# Fly.io local state
 .fly/
+
+# Bundler artifacts
+.bundle/
+vendor/bundle/
+
+# macOS metadata
 .DS_Store
